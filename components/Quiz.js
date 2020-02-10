@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import { gray, green, red, lightBlue } from  '../utils/colors'
+import { setLocalNotification, clearLocalNotification } from '../utils/notification'
 
 class Quiz extends Component {
   state = {
@@ -22,9 +23,14 @@ class Quiz extends Component {
     }));
   }
   nextQuestion(isCorrect) {
-    let { correct, currQuestion } = this.state;
+    let { correct, currQuestion, totalQuestions } = this.state;
     if (isCorrect) correct++;
     currQuestion++;
+    // if quiz ended reschedule notifications
+    if (currQuestion > totalQuestions) {
+      clearLocalNotification().then(
+        setLocalNotification)
+    }
     this.setState({
       correct,
       currQuestion,

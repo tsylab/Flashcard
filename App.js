@@ -14,6 +14,7 @@ import { createAppContainer } from 'react-navigation';
 import { createBottomTabNavigator  } from 'react-navigation-tabs'
 import { createStackNavigator } from 'react-navigation-stack'
 import { white, blue } from  './utils/colors'
+import { setLocalNotification, clearLocalNotification } from './utils/notification'
 
 function MyStatusBar ({backgroundColor, ...props}) {
   return (
@@ -97,6 +98,10 @@ const AppNavigation = createAppContainer(createStackNavigator({
 }))
 
 export default class App extends Component  {
+  componentDidMount () {
+    // set schedule notifications
+    setLocalNotification();
+  }
   render() {
     return (
       <Provider store={createStore(reducer)}>

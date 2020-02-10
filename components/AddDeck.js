@@ -42,7 +42,11 @@ class AddDeck extends Component {
           deckName: null,
           error: null
         });
-        navigation.goBack();
+        //navigation.goBack();
+        navigation.navigate(
+          'Deck',
+          { id: deckName }
+        );
       })
     }
   }
