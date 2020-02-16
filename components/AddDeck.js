@@ -5,6 +5,11 @@ import { View, Text, TextInput, StyleSheet, KeyboardAvoidingView, TouchableOpaci
 import { addDeckToStorage } from '../utils/api.js'
 import { gray, lightBlue, red } from  '../utils/colors'
 
+/**
+ * Represented a View to create new Deck
+ * Connected to Redux store
+ */
+
 const errEmpty = 'You need to fill Title field first!'
 const errExists = 'Deck with the same name is already exists!'
 

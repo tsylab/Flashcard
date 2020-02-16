@@ -14,7 +14,11 @@ import { createAppContainer } from 'react-navigation';
 import { createBottomTabNavigator  } from 'react-navigation-tabs'
 import { createStackNavigator } from 'react-navigation-stack'
 import { white, blue } from  './utils/colors'
-import { setLocalNotification, clearLocalNotification } from './utils/notification'
+import { setLocalNotification } from './utils/notification'
+
+/**
+ * Flashcard application is created for making quizzes! Add Decks, put Cards with questions into it, start Quiz and see results!
+ */
 
 function MyStatusBar ({backgroundColor, ...props}) {
   return (
@@ -24,6 +28,7 @@ function MyStatusBar ({backgroundColor, ...props}) {
   )
 }
 
+// Tab Navigation
 const Tabs = createAppContainer(createBottomTabNavigator({
   DeckList: {
     screen: DeckList,
@@ -58,6 +63,7 @@ const Tabs = createAppContainer(createBottomTabNavigator({
   }
 }))
 
+// Stack Navigation
 const AppNavigation = createAppContainer(createStackNavigator({
   Home: {
     screen: Tabs,

@@ -5,6 +5,11 @@ import { View, Text, FlatList, StyleSheet, TouchableOpacity } from 'react-native
 import { getDecks, loadDefaultStorage } from '../utils/api.js'
 import { lightBlue } from  '../utils/colors'
 
+/**
+ * Component represented Deck list with a way to select any
+ * Connected to Redux store
+ */
+
 function Item({ options, navigation }) {
   return (
     <TouchableOpacity

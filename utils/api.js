@@ -1,6 +1,11 @@
 import { AsyncStorage } from 'react-native'
 
+/**
+ * Helper methods for AsyncStorage database
+ */
+
 const MOBILE_FLASHCARD_KEY = 'MobileFlashcard:storage'
+// Couple of preset cards
 const defaultStorage = {
   React: {
     title: 'React',
@@ -31,10 +36,12 @@ const defaultStorage = {
   }
 }
 
+// Load presets
 export function loadDefaultStorage() {
   return AsyncStorage.setItem(MOBILE_FLASHCARD_KEY, JSON.stringify(defaultStorage))
 }
 
+// Get all Decks from storage
 export function getDecks() {
   return AsyncStorage.getItem(MOBILE_FLASHCARD_KEY)
     .then((results) => {
@@ -42,6 +49,7 @@ export function getDecks() {
     })
 }
 
+// Get specific Deck from storage
 export function getDeck(id) {
   return AsyncStorage.getItem(MOBILE_FLASHCARD_KEY)
     .then((results) => {
@@ -50,6 +58,7 @@ export function getDeck(id) {
     })
 }
 
+// Add new Deck to storage
 export function addDeckToStorage(deck) {
   return AsyncStorage.getItem(MOBILE_FLASHCARD_KEY)
     .then((results) => {
@@ -59,6 +68,7 @@ export function addDeckToStorage(deck) {
     })
 }
 
+// Add new Card to existing Deck
 export function addCardToDeck(id, card) {
   return AsyncStorage.getItem(MOBILE_FLASHCARD_KEY)
     .then((results) => {

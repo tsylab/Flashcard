@@ -3,6 +3,11 @@ import { connect } from 'react-redux'
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import { gray, lightBlue } from  '../utils/colors'
 
+/**
+ * Represented specific Deck with a way to add new Card or start Quiz
+ * Connected to Redux store
+ */
+
 class Deck extends Component {
   render() {
     const { decks, navigation } = this.props,

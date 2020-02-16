@@ -4,6 +4,11 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import { gray, green, red, lightBlue } from  '../utils/colors'
 import { setLocalNotification, clearLocalNotification } from '../utils/notification'
 
+/**
+ * This component is for running quiz. It consistently displays all Cards from quiz with a way to mark answer as Correct or Incorrect, and shows results in the end
+ * Connected to Redux store
+ */
+
 class Quiz extends Component {
   state = {
     deck: null,
@@ -93,6 +98,7 @@ class Quiz extends Component {
             </View>
           </View>
         )
+      // Question
       } else {
         const mainText = deck.questions[currQuestion - 1][display];
         return (

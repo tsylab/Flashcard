@@ -5,6 +5,11 @@ import { View, Text, TextInput, StyleSheet, KeyboardAvoidingView, TouchableOpaci
 import { addCardToDeck } from '../utils/api.js'
 import { gray, lightBlue, red } from  '../utils/colors'
 
+/**
+ * Displays a form to add new Card to Deck
+ * Connected to Redux store
+ */
+
 class AddCard extends Component {
   state = {
     question: null,
