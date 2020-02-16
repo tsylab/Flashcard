@@ -1,6 +1,6 @@
 # Flashcard
 
-This project created during education at Udacity's React Fundamentals course. It was bootstrapped with [Create React Native App](https://github.com/facebook/react-native) and [Expo](https://expo.io/)
+This project created during education at Udacity's React Fundamentals course. It was bootstrapped with [Create React Native App](https://github.com/facebook/react-native) and [Expo](https://expo.io/) and uses Redux
 
 # Installing
 
